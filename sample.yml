@@ -1,0 +1,10 @@
+---
+- name: sample playbook
+  hosts: all
+
+  tasks:
+  - name: Touch a file, using symbolic modes to set the permissions (equivalent to 0644)
+    file:
+      path: /home/psuser1/fooaaaaaaaa.conf
+      state: touch
+      mode: u=rw,g=r,o=r
