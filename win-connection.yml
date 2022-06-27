@@ -1,0 +1,8 @@
+---
+- become: false
+  hosts: windows
+  name: "win-connection check"
+  gather_facts: false
+  tasks:
+    - win_ping:
+      name: "test connection"
