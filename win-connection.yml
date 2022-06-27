@@ -1,6 +1,6 @@
 ---
 - become: false
-  hosts: all
+  hosts: windows
   name: "win-connection check"
   gather_facts: false
   tasks:
