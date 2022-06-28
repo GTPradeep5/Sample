@@ -5,7 +5,7 @@
   gather_facts: false
   tasks:
     - name: Run remote PowerShell Script
-      ansible.windows.win_powershell:
+      win_powershell:
         script: G:\pssis-outage-scripts\Scripts\RCA\PullLogsfromAzure.ps1
         parameters: 
           FSTicket: 782594
