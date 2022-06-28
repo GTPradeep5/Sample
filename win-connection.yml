@@ -5,4 +5,7 @@
   gather_facts: false
   tasks:
     - name: Run remote PowerShell Script
-      win_command: powershell.exe -ExecutionPolicy ByPass -File G:\pssis-outage-scripts\Scripts\RCA\PullLogsfromAzure.ps1 782594
+      ansible.windows.win_powershell:
+        script: G:\pssis-outage-scripts\Scripts\RCA\PullLogsfromAzure.ps1
+        parameters: 
+          FSTicket: 782594
