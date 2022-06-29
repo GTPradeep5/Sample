@@ -7,3 +7,4 @@
     - name: Run remote PowerShell Script
       win_command: powershell.exe -ExecutionPolicy ByPass -File G:\pssis-outage-scripts\Scripts\RCA\MemoryAnalyzer.ps1 {{FSTicket}}
       become: yes
+      become_method: runas
