@@ -1,6 +1,5 @@
 ---
-- become: false
-  hosts: windows
+- hosts: windows
   name: "win-connection check"
   gather_facts: false
   become_method: runas
