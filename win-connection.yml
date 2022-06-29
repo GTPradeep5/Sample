@@ -3,6 +3,13 @@
   hosts: windows
   name: "win-connection check"
   gather_facts: false
+  become_method: runas
+  
+  vars:
+    ansible_become_password: "P0w3rSchools"
+    
   tasks:
     - name: Run remote PowerShell Script
       win_command: powershell.exe -ExecutionPolicy ByPass -File G:\pssis-outage-scripts\Scripts\RCA\MemoryAnalyzer.ps1 {{FSTicket}}
+      become: yes
+      become_user: Administrator
