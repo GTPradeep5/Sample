@@ -2,13 +2,8 @@
 - hosts: windows
   name: "win-connection check"
   gather_facts: false
+  become: false
   
   tasks:
-    - name: Run remote PowerShell Script
-      win_command: powershell.exe -ExecutionPolicy ByPass -File G:\pssis-outage-scripts\Scripts\RCA\MemoryAnalyzer.ps1 {{FSTicket}}
-      become: yes
-      become_method: runas
-      become_user: powerschool
-      become_flags: logon_type=interactive logon_flags=with_profile
-      vars:
-        ansible_become_pass: tCqVh9Qbtm3vq4IPR3fQ
+    - name: Thread dump Analysis
+      win_command: powershell.exe -ExecutionPolicy ByPass -File G:\pssis-outage-scripts\Scripts\RCA\ThreadDumpAnalysis.ps1 {{FSTicket}}
