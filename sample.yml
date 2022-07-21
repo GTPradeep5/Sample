@@ -10,4 +10,4 @@
       register: host_output
     
     - debug:
-        msg: {{ansible_user}}
+        msg: {{ hostvars[host].ansible_host }}
