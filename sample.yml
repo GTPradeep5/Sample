@@ -1,10 +1,13 @@
 ---
-- name: sample playbook
-  hosts: all
+- become: false
+  hosts: windows
+  name: "win-connection check"
+  gather_facts: false
 
   tasks:
-  - name: Touch a file, using symbolic modes to set the permissions (equivalent to 0644)
-    file:
-      path: /home/psuser1/fooaaaaaaaa.conf
-      state: touch
-      mode: u=rw,g=r,o=r
+    - name: Pull logs from azure storage
+      win_command: powershell.exe -ExecutionPolicy ByPass -File G:\pssis-outage-scripts\Scripts\RCA\PullLogsfromAzure.ps1 {{FSTicket}}
+      register: host_output
+    
+    - debug:
+        msg: "host_output.stdout: {{ host_output.stdout }}"
