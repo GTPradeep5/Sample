@@ -1,6 +1,6 @@
 ---
 - become: false
-  hosts: 172.19.192.193
+  hosts: group
   name: "win-connection check"
   gather_facts: false
 
@@ -10,4 +10,4 @@
       register: host_output
     
     - debug:
-        msg: {{ hostvars[host].ansible_host }}
+        msg: {{ hostvars[group].temp }}
