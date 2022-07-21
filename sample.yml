@@ -13,4 +13,4 @@
       
     
     - debug:
-        msg: {{temp}}
+        msg: "{{temp}}"
