@@ -10,4 +10,4 @@
       register: host_output
     
     - debug:
-        msg: {{ hostvars['group'].temp }}
+        msg: {{hostvars['group'].temp}}
