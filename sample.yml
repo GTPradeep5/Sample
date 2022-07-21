@@ -10,4 +10,4 @@
       register: host_output
     
     - debug:
-        msg: "host_output.stdout: {{ host_output.stdout }}"
+        msg: "host_output.stdout: {{ host_output.stdout[0] }}"
