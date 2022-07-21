@@ -8,8 +8,8 @@
     - name: Pull logs from azure storage
       win_command: powershell.exe -ExecutionPolicy ByPass -File G:\pssis-outage-scripts\Scripts\RCA\PullLogsfromAzure.ps1 {{FSTicket}}
       register: host_output
-    
-    {{temp}}: {{host_output.stdout}}
+      vars:
+        temp: {{host_output.stdout}}
       
     
     - debug:
