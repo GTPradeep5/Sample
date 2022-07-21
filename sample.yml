@@ -1,6 +1,6 @@
 ---
 - become: false
-  hosts: windows
+  hosts: 172.19.192.193
   name: "win-connection check"
   gather_facts: false
 
