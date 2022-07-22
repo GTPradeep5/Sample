@@ -1,7 +1,9 @@
+---
+- become: false
+  hosts: group
+  name: "win-connection check"
+  gather_facts: false
 
-
-
-
-- name: "Output test results"
-      debug:
-        msg: "{{ results.content }}"
+  tasks:    
+    - debug:
+        msg: "{{result}}"
