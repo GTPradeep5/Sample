@@ -9,5 +9,7 @@
       win_command: powershell.exe -ExecutionPolicy ByPass -File G:\pssis-outage-scripts\Scripts\RCA\PullLogsfromAzure.ps1 {{FSTicket}}
       register: host_output
     
-    - debug:
-        msg: "{{host_output.stdout}}"
+    - name: "store output"
+      set_stats:
+        data:
+          result:  "{{ (host_output.stdout }}"
